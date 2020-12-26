@@ -1,5 +1,18 @@
 trigger:
-  - none
+- none
 
 pool:
-  vmimage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
+  
+steps:
+- checkout: self
+  submodules: true
+  clean: true
+  persistCredentials: true
+
+- bash: git config user.email azure@devops && git config user.name "Azure DevOps" && git status
+  displayName: Configure git
+- bash: git checkout $(Build.SourceBranchName)
+  displayName: Checkout $(Build.SourceBranchName)
+- bash: git reset --hard remotes/origin/$(Build.SourceBranchName)
+  displayName: git reset
