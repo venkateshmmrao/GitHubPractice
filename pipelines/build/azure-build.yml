@@ -41,3 +41,14 @@ steps:
       echo "release_version is $release_version" 
       az pipelines variable-group variable update --group-id 1 --name releaseversion --value $release_version
     displayName: 'Update Version'
+      
+  - task: Maven@3
+    displayName: Release_Prepare
+    inputs:
+      mavenPomFile: 'lastcodingchallengeofyear/pom.xml'
+      mavenOptions: '-Xmx3072m'
+      javaHomeOption: 'JDKVersion'
+      publishJUnitResults: false
+      options: --batch-mode -Dresume=false
+      goals: --settings $(Agent.TempDirectory)/settings.xml -DskipTests -Darguments=-DskipTests release:prepare
+      
