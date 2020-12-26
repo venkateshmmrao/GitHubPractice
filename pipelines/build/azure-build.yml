@@ -21,3 +21,21 @@ steps:
     displayName: Checkout $(Build.SourceBranchName)
   - bash: git reset --hard remotes/origin/$(Build.SourceBranchName)
     displayName: git reset
+     
+- script: az --version
+  displayName: 'Show Azure CLI version'
+- script: az extension add -n azure-devops
+  displayName: 'Install Azure Devops Extension'
+- script: echo ${AZURE_DEVOPS_CLI_PAT} | az devops login
+  env:
+    AZURE_DEVOPS_CLI_PAT: $(System.AccessToken)
+  displayName: 'Login Azure Devops Extension'
+- script: az devops configure --defaults organization=https://dev.azure.com/bhatrashu project="GitHubDemo" --use-git-aliases true
+  displayName: 'Set default Azure DevOps organization and project'
+- script: |
+    version=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q)
+    echo "version from maven $version"
+    release_version=$(echo $version | cut -d'-' -f 1)
+    echo "release_version is $release_version" 
+    az pipelines variable-group variable update --group-id 1 --name release --value $release_version
+  displayName: 'Update Version'
