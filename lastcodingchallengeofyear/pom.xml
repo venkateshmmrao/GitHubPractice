@@ -14,13 +14,12 @@
 	<name>DebitCardManagement</name>
 	<description>Demo project for Spring Boot</description>
 
-
 	<scm>
-	<url>https://dev.azure.com/M1056104/Java%20Applications/_git/DebitCardManagement</url>
-    <connection>scm:git:https://yqjsox6xswqdq4hgt67fpi52cfyhc3bl3d4wxkhfq5vyptas22da@dev.azure.com/M1056104/Java%20Applications/_git/DebitCardManagement</connection>
-	<developerConnection>scm:git:https://yqjsox6xswqdq4hgt67fpi52cfyhc3bl3d4wxkhfq5vyptas22da@dev.azure.com/M1056104/Java%20Applications/_git/DebitCardManagement</developerConnection>
-    <tag>HEAD</tag>
-    </scm>
+		<url>https://github.com/venkateshmmrao/GitHubPractice</url>
+		<connection>scm:git:git://github.com/venkateshmmrao/GitHubPractice.git</connection>
+		<developerConnection>scm:git:git@github.com/venkateshmmrao/GitHubPractice.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 	<properties>
 		<java.version>1.8</java.version>
