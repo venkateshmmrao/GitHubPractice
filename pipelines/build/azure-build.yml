@@ -5,14 +5,19 @@ pool:
   vmImage: 'ubuntu-latest'
   
 steps:
-- checkout: self
-  submodules: true
-  clean: true
-  persistCredentials: true
+  - task: DownloadSecureFile@1
+    displayName: Download settings.xml
+    inputs:
+      secureFile: settings.xml
 
-- bash: git config user.email azure@devops && git config user.name "Azure DevOps" && git status
-  displayName: Configure git
-- bash: git checkout $(Build.SourceBranchName)
-  displayName: Checkout $(Build.SourceBranchName)
-- bash: git reset --hard remotes/origin/$(Build.SourceBranchName)
-  displayName: git reset
+  - checkout: self
+    submodules: true
+    clean: true
+    persistCredentials: true
+
+  - bash: git config user.email azure@devops && git config user.name "Azure DevOps" && git status
+      displayName: Configure git
+  - bash: git checkout $(Build.SourceBranchName)
+      displayName: Checkout $(Build.SourceBranchName)
+  - bash: git reset --hard remotes/origin/$(Build.SourceBranchName)
+      displayName: git reset
