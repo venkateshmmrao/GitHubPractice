@@ -39,5 +39,5 @@ steps:
       echo "version from maven $version"
       release_version=$(echo $version | cut -d'-' -f 1)
       echo "release_version is $release_version" 
-      az pipelines variable-group variable update --group-id 1 --name release --value $release_version
+      az pipelines variable-group variable update --group-id 1 --name releaseversion --value $release_version
     displayName: 'Update Version'
