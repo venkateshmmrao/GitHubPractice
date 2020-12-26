@@ -45,7 +45,7 @@ steps:
   - task: Maven@3
     displayName: Release_Prepare
     inputs:
-      mavenPomFile: 'DebitCardManagement/lastcodingchallengeofyear/pom.xml'
+      mavenPomFile: 'lastcodingchallengeofyear/pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
       publishJUnitResults: false
