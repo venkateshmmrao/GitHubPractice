@@ -9,15 +9,15 @@
 	</parent>
 	<groupId>com.mindtree</groupId>
 	<artifactId>lastcodingchallengeofyear</artifactId>
-	<version>0.0.9-SNAPSHOT</version>
+	<version>1.0.9-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>DebitCardManagement</name>
 	<description>Demo project for Spring Boot</description>
 
 	<scm>
 		<url>https://github.com/venkateshmmrao/GitHubPractice</url>
-		<connection>scm:git:git://github.com/venkateshmmrao/GitHubPractice.git</connection>
-		<developerConnection>scm:git:git@github.com/venkateshmmrao/GitHubPractice.git</developerConnection>
+		<connection>scm:git:ssh://github.com/venkateshmmrao/GitHubPractice.git</connection>
+		<developerConnection>scm:git:ssh@github.com/venkateshmmrao/GitHubPractice.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
