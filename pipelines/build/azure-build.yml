@@ -16,8 +16,8 @@ steps:
     persistCredentials: true
 
   - bash: git config user.email azure@devops && git config user.name "Azure DevOps" && git status
-      displayName: Configure git
+    displayName: Configure git
   - bash: git checkout $(Build.SourceBranchName)
-      displayName: Checkout $(Build.SourceBranchName)
+    displayName: Checkout $(Build.SourceBranchName)
   - bash: git reset --hard remotes/origin/$(Build.SourceBranchName)
-      displayName: git reset
+    displayName: git reset
