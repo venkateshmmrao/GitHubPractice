@@ -1,0 +1,47 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+resources:
+  repositories:
+  - repository: PipelinesRepo # The name used to reference this repository in the checkout step
+    type: git
+    name: Java Applications/Java Applications
+steps:
+  - checkout: self
+
+  - checkout: PipelinesRepo  
+    
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        pwd
+        git checkout $(Build.SourceBranchName)
+        git branch
+      workingDirectory: DebitCardManagement
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'ls -R'
+  
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: 'git branch'
+  
+  - task: Bash@3
+    displayName: "bash script"
+    inputs:
+      targetType: 'inline'
+      script: 'ls -R'
+  
+    
+  
+    
+
+

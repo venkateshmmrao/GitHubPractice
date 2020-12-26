@@ -1,0 +1,38 @@
+#!/bin/sh
+
+echo "<<< Install ansible "
+sudo apt -y update
+sudo apt -y install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt update
+sudo apt -y install ansible
+echo "    done >>>>"
+
+
+base64 -d ${ANSIBLE_BASE64} playbook.tar.gz
+tar xvzf playbook.tar.gz
+
+cd playbook
+echo "<<< Apply current role's playbook"
+ansible-playbook  -i inventory playbook.yml 
+echo "Ansible exit-code: $?"
+echo "    done >>>>"
+
+
+
+
+# Unpack playbook
+echo "<<< Unpack ansible playbook"
+base64 -d > playbook.tar.gz << EOF_ANSIBLE
+${ANSIBLE_BASE64}
+EOF_ANSIBLE
+tar xvzf playbook.tar.gz
+echo "    done >>>>"
+
+
+# Run playbook
+cd playbook
+echo "<<< Apply current role's playbook"
+ansible-playbook  -i inventory playbook.yml 
+echo "Ansible exit-code: $?"
+echo "    done >>>>"

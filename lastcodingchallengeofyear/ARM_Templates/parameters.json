@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "be7a538f-95e1-4d7a-bfae-aa9ee439586c"
+        },
+        "name": {
+            "value": "temptomcatwebapp2"
+        },
+        "location": {
+            "value": "Central US"
+        },
+        "hostingPlanName": {
+            "value": "ServicePlan699668b9-a2dd"
+        },
+        "serverFarmResourceGroup": {
+            "value": "DevOps-Practice-Apps"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "currentStack": {
+            "value": "java"
+        },
+        "phpVersion": {
+            "value": "OFF"
+        },
+        "javaVersion": {
+            "value": "1.8"
+        },
+        "javaContainer": {
+            "value": "TOMCAT"
+        },
+        "javaContainerVersion": {
+            "value": "8.5"
+        }
+    }
+}
