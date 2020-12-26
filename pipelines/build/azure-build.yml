@@ -30,7 +30,7 @@ steps:
     env:
       AZURE_DEVOPS_CLI_PAT: $(System.AccessToken)
     displayName: 'Login Azure Devops Extension'
-  - script: az devops configure --defaults organization=https://dev.azure.com/bhatrashu project="GitHubDemo" --use-git-aliases true
+  - script: az devops configure --defaults organization=https://dev.azure.com/TomTomPractice project="GitHubPractice" --use-git-aliases true
     displayName: 'Set default Azure DevOps organization and project'
   - script: |
       pwd
