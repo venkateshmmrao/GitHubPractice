@@ -17,8 +17,6 @@
 	<scm>
 		<url>https://github.com/venkateshmmrao/GitHubPractice</url>
 		<connection>scm:git:ssh://github.com/venkateshmmrao/GitHubPractice.git</connection>
-		<developerConnection>scm:git:ssh@github.com/venkateshmmrao/GitHubPractice.git</developerConnection>
-		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
